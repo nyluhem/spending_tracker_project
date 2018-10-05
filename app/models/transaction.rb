@@ -1,5 +1,8 @@
 class Transaction
 
+  attr_accessor(:amount, :transaction_time)
+  attr_reader(:id, :merchant_id)
+
 
   def initialize(options)
     @id               = options["id"].to_i
