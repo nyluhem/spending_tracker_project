@@ -39,12 +39,28 @@ class Merchant
   end
 
   def update
+    sql = "UPDATE merchants
+    SET name = $1
+      WHERE id = $2;"
+
+      values = [
+        @name,
+        @id
+      ]
+      SqlRunner.run(sql, values)
   end
 
   def self.find(id)
+    sql = "SELECT * FROM merchants
+    WHERE id = $1;"
+    results = SqlRunner.run(sql, [id])
+    return Merchant.new(results.first)
   end
 
   def self.delete(id)
+    sql = "DELETE FROM merchants
+    WHERE id = $1;"
+    SqlRunner.run(sql, [id])
   end
 
 end
