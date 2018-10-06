@@ -18,7 +18,8 @@ CREATE TABLE transactions (
   id SERIAL8 PRIMARY KEY,
   amount INT,
   merchant_id INT8 REFERENCES merchants(id) ON DELETE CASCADE,
-  transaction_time TIMESTAMP
+  transaction_time TIMESTAMP,
+  tag_id INT8 REFERENCES tags(id) ON DELETE CASCADE
 );
 
 CREATE TABLE users (
