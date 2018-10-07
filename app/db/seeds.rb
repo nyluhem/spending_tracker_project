@@ -113,5 +113,5 @@ transactions = Transaction.all
 
 
 
-binding.pry
-nil
+# binding.pry
+# nil
