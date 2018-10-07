@@ -1,1 +1,10 @@
-<h1><%= @merchants %> Shalom Jackie!</h1>
+<h1>Merchants</h1>
+
+
+<% for merchant in @merchants %>
+<p>Name: <%= merchant.name %></p>
+<p>Added: <%= Time.now.strftime("%H:%M %d-%m-%y")%></p>
+<hr>
+<% end %>
+
+<a href="merchants/new">Add New Merchant</a>
