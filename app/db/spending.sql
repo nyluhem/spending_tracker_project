@@ -11,14 +11,15 @@ CREATE TABLE tags (
 
 CREATE TABLE merchants (
   id SERIAL8 PRIMARY KEY,
-  name VARCHAR(255)
+  name VARCHAR(255),
+  time_added VARCHAR(255)
 );
 
 CREATE TABLE transactions (
   id SERIAL8 PRIMARY KEY,
-  amount INT,
+  amount MONEY,
   merchant_id INT8 REFERENCES merchants(id) ON DELETE CASCADE,
-  transaction_time TIMESTAMP,
+  transaction_time VARCHAR(255),
   tag_id INT8 REFERENCES tags(id) ON DELETE CASCADE
 );
 

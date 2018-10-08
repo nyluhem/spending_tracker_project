@@ -2,13 +2,14 @@ require_relative("../db/sql_runner.rb")
 
 class Merchant
 
-  attr_accessor(:name)
+  attr_accessor(:name, :time_added)
   attr_reader(:id)
 
 
   def initialize(options)
     @id   = options["id"].to_i
     @name = options["name"]
+    @time_added = Time.now.strftime("%H:%M %d-%m-%y")
   end
 
   def self.delete_all
@@ -25,11 +26,12 @@ class Merchant
 
   def save
     sql = "INSERT INTO merchants
-    (name)
-      VALUES ($1)
+    (name,
+    time_added)
+      VALUES ($1, $2)
       RETURNING id;"
 
-      values = [@name]
+      values = [@name, @time_added]
 
       result = SqlRunner.run(sql, values)
       result_hash = result[0]
@@ -40,11 +42,12 @@ class Merchant
 
   def update
     sql = "UPDATE merchants
-    SET name = $1
-      WHERE id = $2;"
+    SET (name, time_added) = ($1, $2)
+      WHERE id = $3;"
 
       values = [
         @name,
+        @time_added,
         @id
       ]
       SqlRunner.run(sql, values)
@@ -63,8 +66,8 @@ class Merchant
     SqlRunner.run(sql, [id])
   end
 
-  def tags
-    sql = "SELECT tags.*
+  def tag_name
+    sql = "SELECT tags.name
           FROM tags
           INNER JOIN transactions
           ON transactions.tag_id = tags.id

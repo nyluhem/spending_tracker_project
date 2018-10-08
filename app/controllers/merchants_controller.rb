@@ -14,3 +14,5 @@ end
 get("/merchants/new") do
   erb(:"merchants/new")
 end
+
+get("/merchants ")

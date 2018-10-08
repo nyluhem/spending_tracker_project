@@ -8,9 +8,9 @@ class Transaction
 
   def initialize(options)
     @id               = options["id"].to_i
-    @amount           = options["amount"].to_i
+    @amount           = options["amount"]
     @merchant_id      = options["merchant_id"].to_i
-    @transaction_time = options["transaction_time"]
+    @transaction_time = Time.now.strftime("%H:%M %d-%m-%y")
     @tag_id           = options["tag_id"].to_i
   end
 
@@ -30,16 +30,16 @@ class Transaction
     sql = "INSERT into transactions (
     amount,
     merchant_id,
-    transaction_time,
-    tag_id
+    tag_id,
+    transaction_time
     )
     VALUES ($1, $2, $3, $4)
     RETURNING id;"
     values = [
       @amount,
       @merchant_id,
-      @transaction_time,
-      @tag_id
+      @tag_id,
+      @transaction_time
     ]
     result = SqlRunner.run(sql, values)
     result_hash = result[0]
@@ -53,16 +53,16 @@ class Transaction
     SET (
       amount,
       merchant_id,
-      transaction_time,
       tag_id
-      ) = ($1, $2, $3, $4)
+      ) = ($1, $2, $3)
+      WHERE transaction_time = $4
       WHERE id = $5;"
 
       values = [
         @amount,
         @merchant_id,
-        @transaction_time,
         @tag_id,
+        @transaction_time,
         @id
       ]
     SqlRunner.run(sql, values)

@@ -72,42 +72,44 @@ tags = Tag.all
 transaction_1 = Transaction.new({
   "amount" => 12,
   "merchant_id" => merchant_1.id,
-  "transaction_time" => Time.now,
   "tag_id" => tag_6.id
     })
 transaction_2 = Transaction.new({
   "amount" => 4,
   "merchant_id" => merchant_3.id,
-  "transaction_time" => Time.now,
   "tag_id" => tag_4.id
     })
 
 transaction_3 = Transaction.new({
   "amount" => 25,
   "merchant_id" => merchant_2.id,
-  "transaction_time" => Time.now,
   "tag_id" => tag_5.id
     })
 
 transaction_4 = Transaction.new({
   "amount" => 8,
   "merchant_id" => merchant_4.id,
-  "transaction_time" => Time.now,
   "tag_id" => tag_3.id
     })
 
 transaction_5 = Transaction.new({
   "amount" => 45,
   "merchant_id" => merchant_5.id,
-  "transaction_time" => Time.now,
   "tag_id" => tag_2.id
     })
+
+transaction_6 = Transaction.new({
+  "amount" => 22.50,
+  "merchant_id" => merchant_1.id,
+  "tag_id" => tag_1.id
+  })
 
 transaction_1.save
 transaction_2.save
 transaction_3.save
 transaction_4.save
 transaction_5.save
+transaction_6.save
 
 transactions = Transaction.all
 
