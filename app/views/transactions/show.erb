@@ -5,7 +5,10 @@
 <p>Tag: <%= @transaction.tag.name %></p>
 <p>Transaction Time: <%= @transaction.transaction_time %></p>
 
-<a href="/transactions/<%= @transaction.id %>/edit">Edit Transaction</a>
+<a class="btn" href="/transactions/<%= @transaction.id %>/edit">Edit Transaction</a>
+
 <form action="/transactions/<%= @transaction.id %>/delete" method="POST">
-  <input type="submit" value="Delete"></form>
+  <button class="btn" type="delete">Delete</button>
+</form>
+
 <a href="/transactions">Return to Previous Page</a>

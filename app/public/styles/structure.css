@@ -1,0 +1,47 @@
+
+/****** General Styles *********/
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 55px;
+  text-align: center;
+  color: black;
+  margin: 0;
+  padding: 0;
+
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+
+}
+
+/****** Header Style *********/
+.header {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 72px;
+  text-align: center;
+}
+
+
+/****** Navigation Style *********/
+.nav {
+
+}
+
+/****** Footer Style *********/
+.footer {
+
+}

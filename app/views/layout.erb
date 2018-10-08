@@ -3,8 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>Spending Tracker!</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="/styles/buttons.css">
+    <link rel="stylesheet" type="text/css" href="/styles/forms.css">
+    <link rel="stylesheet" type="text/css" href="/styles/structure.css">
+
   </head>
+
   <body>
+    <main>
+      <header class="header">
+        Pennies to Pounds!
+      </header>
     <ul>
       <li>
         <a href="/">Home</a>
@@ -20,6 +35,10 @@
       </li>
 
     </ul>
-    <%= yield %>
+    <section id="content">
+      <%= yield %>
+    </section>
+    </main>
+    <footer>&copy 2018</footer>
   </body>
 </html>

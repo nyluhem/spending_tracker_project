@@ -3,9 +3,10 @@
 
 <% for tag in @tags %>
 <p>Name: <%= tag.name %></p>
-<a href="tags/<%= tag.id %>/edit">Edit</a>
+<a class="btn" href="tags/<%= tag.id %>/edit">Edit</a>
 <form action="/tags/<%= tag.id %>/delete" method="POST">
-  <input type="submit" value="Delete"></form>
+  <button class="btn" type="delete"></button>
+</form>
 <% end %>
 
-<a href="tags/new">Add New Tag</a>
+<a class="btn" href="tags/new">Add New Tag</a>

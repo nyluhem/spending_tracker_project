@@ -4,9 +4,9 @@
 <% for transaction in @transactions %>
 <p>Amount: <%= transaction.amount %></p>
 <p>Tag: <%= transaction.tag.name %></p>
-<a href="transactions/<%= transaction.id %>">View Transaction Details</a>
+<a class="btn" href="transactions/<%= transaction.id %>">View Transaction Details</a>
 <hr>
 
 <% end %>
 
-<a href="transactions/new">Add a Transaction</a>
+<a class="btn" href="transactions/new">Add a Transaction</a>

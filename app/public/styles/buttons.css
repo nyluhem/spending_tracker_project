@@ -1,0 +1,17 @@
+.btn, button {
+  background-color: #A9CCE3;
+  border-radius: 12px;
+  color: #FFF;
+  cursor: pointer;
+  float: left;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  padding: 10px 18px;
+  text-decoration: none;
+  margin: 4px
+}
+
+.btn:hover {
+  background-color: purple;
+}
