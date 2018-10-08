@@ -3,6 +3,7 @@
 
 <% for merchant in @merchants %>
 <p>Name: <%= merchant.name %></p>
+<p>Associated Tags: <%= merchant.tags %></p>
 <p>Added: <%= Time.now.strftime("%H:%M %d-%m-%y")%></p>
 <hr>
 <% end %>

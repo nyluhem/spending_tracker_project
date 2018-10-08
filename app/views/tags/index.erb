@@ -1,1 +1,9 @@
-<h1>Shalom Nyalls! <%= @tags %></h1>
+<h1>Tags</h1>
+
+
+<% for tag in @tags %>
+<p>Name: <%= tag.name %></p>
+<hr>
+<% end %>
+
+<a href="tags/new">Add New Tag</a>

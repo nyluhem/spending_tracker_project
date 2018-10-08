@@ -10,3 +10,7 @@ get("/transactions") do
   @transactions = Transaction.all
   erb(:"transactions/index")
 end
+
+get("/transactions/new") do
+  erb(:"transactions/new")
+end
