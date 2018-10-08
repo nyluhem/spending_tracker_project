@@ -15,6 +15,10 @@ get("/tags/new") do
   erb(:"tags/new")
 end
 
+get("tags/edit") do
+  erb(:"tags/edit")
+end
+
 post("/tags") do
   @tag = Tag.new(params)
   @tag.save

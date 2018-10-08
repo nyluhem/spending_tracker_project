@@ -15,6 +15,10 @@ get("/merchants/new") do
   erb(:"merchants/new")
 end
 
+get("/merchants/edit") do
+  erb(:"merchants/edit")
+end
+
 post("/merchants") do
   @merchant = Merchant.new(params)
   @merchant.save

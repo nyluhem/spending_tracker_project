@@ -17,6 +17,10 @@ get("/transactions/new") do
   erb(:"transactions/new")
 end
 
+get("/transactions/edit") do
+  erb(:"transactions/edit")
+end
+
 get("/transactions/:id") do
   @id = params[:id].to_i
   @transaction = Transaction.find(@id)
