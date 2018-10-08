@@ -6,10 +6,14 @@ require_relative( "../models/tag.rb")
 require_relative("../models/transaction.rb")
 also_reload( "../models/*" )
 
+#INDEX
+
 get("/transactions") do
   @transactions = Transaction.all
   erb(:"transactions/index")
 end
+
+#NEW
 
 get("/transactions/new") do
     @merchants = Merchant.all
@@ -17,9 +21,14 @@ get("/transactions/new") do
   erb(:"transactions/new")
 end
 
-get("/transactions/edit") do
+#EDIT
+
+get("/transactions/:id/edit") do
+  @transaction = Transaction.find(params[:id])
   erb(:"transactions/edit")
 end
+
+#SHOW
 
 get("/transactions/:id") do
   @id = params[:id].to_i
@@ -27,9 +36,17 @@ get("/transactions/:id") do
   erb(:"transactions/show")
 end
 
-post("/transactions") do
+#CREATE
 
+post("/transactions") do
   @transaction = Transaction.new(params)
   @transaction.save
+  redirect to "/transactions"
+end
+
+# UPDATE
+
+post("/transactions/:id") do
+  @transaction = Transaction.new(params).update
   redirect to "/transactions"
 end
