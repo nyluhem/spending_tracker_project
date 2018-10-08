@@ -1,1 +1,28 @@
-<h1>STOP SPENDING MONEY!</h1>
+<form action="/transactions" method="POST">
+
+  <label for="amount-input">Amount</label>
+  <input type="text" name="amount" id="amount-input">
+
+  <label for="description-input">Description</label>
+  <input type="text" name="description" id="description-input">
+
+  <label for="merchant-input">Select a merchant:</label>
+  <select class="" name="merchant_id" id="merchant-input">
+    <% @merchants.each do |merchant| %>
+    <option value="<%= merchant.id %>">
+    <%= merchant.name %></option>
+    <% end %>
+  </select>
+
+  <label for="tag-input">Select a tag:</label>
+  <select class="" name="tag_id">
+    <% @tags.each do |tag| %>
+    <option value="<%= tag.id %>">
+    <%= tag.name %>
+    </option>
+    <% end %>
+  </select>
+
+  <input type="submit" value="Spend Money">
+
+</form>

@@ -12,6 +12,8 @@ get("/transactions") do
 end
 
 get("/transactions/new") do
+    @merchants = Merchant.all
+    @tags = Tag.all
   erb(:"transactions/new")
 end
 
@@ -19,4 +21,11 @@ get("/transactions/:id") do
   @id = params[:id].to_i
   @transaction = Transaction.find(@id)
   erb(:"transactions/show")
+end
+
+post("/transactions") do
+
+  @transaction = Transaction.new(params)
+  @transaction.save
+  redirect to "/transactions"
 end
