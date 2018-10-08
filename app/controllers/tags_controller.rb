@@ -41,3 +41,10 @@ post("/tags/:id") do
   tag.update
   redirect to "/tags"
 end
+
+#DELETE
+
+post("/tags/:id/delete") do
+  Tag.delete(params[:id])
+  redirect to "/tags"
+end

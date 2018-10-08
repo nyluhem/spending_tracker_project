@@ -41,3 +41,10 @@ post("/merchants/:id") do
   merchant.update
   redirect to "/merchants"
 end
+
+#DELETE
+
+post("/merchants/:id/delete") do
+  Merchant.delete(params[:id])
+  redirect to "/merchants"
+end
