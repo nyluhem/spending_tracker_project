@@ -58,12 +58,13 @@ class Transaction
       description,
       merchant_id,
       tag_id,
-      transation_time
+      transaction_time
       ) = ($1, $2, $3, $4, $5)
       WHERE id = $6;"
 
       values = [
         @amount,
+        @description,
         @merchant_id,
         @tag_id,
         @transaction_time,

@@ -1,1 +1,37 @@
-<h1>transactions edit</h1>
+<h1>Edit Transaction!</h1>
+
+<form method="POST" action="/transactions/<%= @transaction.id %>">
+
+<label for="amount-input">Amount</label>
+<input type="text" name="amount" value="<%= @transaction.amount %>" id="amount-input">
+
+<label for="description-input">Description</label>
+<input type="text" name="description" value="<%= @transaction.description %>" id="description-input">
+
+<label for="merchant-select">Select a merchant:</label>
+<select class="" name="merchant_id" id="merchant-select" selected="<%= @transaction.merchant_id  %>">
+  <% @merchants.each do |merchant| %>
+    <% if merchant.id == @transaction.merchant_id %>
+      <option value="<%= merchant.id %>" selected><%= merchant.name %></option>
+      <% else %>
+      <option value="<%= merchant.id %>">
+        <%= merchant.name %></option>
+  <% end %>
+  <% end %>
+</select>
+
+<label for="tag-select">Select a tag:</label>
+<select class="" name="tag_id" id="tag-select" selected="<%= @transaction.tag_id  %>">
+  <% @tags.each do |tag| %>
+    <% if tag.id == @transaction.tag_id %>
+      <option value="<%= tag.id %>" selected><%= tag.name %></option>
+      <% else %>
+      <option value="<%= tag.id %>">
+        <%= tag.name %></option>
+  <% end %>
+  <% end %>
+</select>
+
+<input type="submit" value="Update Transaction">
+
+</form>
