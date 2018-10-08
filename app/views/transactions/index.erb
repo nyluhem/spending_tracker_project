@@ -3,10 +3,10 @@
 
 <% for transaction in @transactions %>
 <p>Amount: <%= transaction.amount %></p>
-<p>Merchant: <%= transaction.merchant.name%></p>
-<p>Time: <%= transaction.transaction_time %></p>
 <p>Tag: <%= transaction.tag.name %></p>
+<a href="transactions/<%= transaction.id %>">View Transaction Details</a>
 <hr>
+
 <% end %>
 
 <a href="transactions/new">Oh No! You've spent more money!</a>

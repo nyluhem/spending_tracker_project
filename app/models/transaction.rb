@@ -2,13 +2,14 @@ require_relative("../db/sql_runner.rb")
 
 class Transaction
 
-  attr_accessor(:amount, :transaction_time, :merchant_id, :tag_id)
-  attr_reader(:id)
+  attr_accessor(:amount, :merchant_id, :tag_id, :description)
+  attr_reader(:id, :transaction_time)
 
 
   def initialize(options)
     @id               = options["id"].to_i
     @amount           = options["amount"]
+    @description      = options["description"]
     @merchant_id      = options["merchant_id"].to_i
     @transaction_time = Time.now.strftime("%H:%M %d-%m-%y")
     @tag_id           = options["tag_id"].to_i
@@ -29,14 +30,16 @@ class Transaction
   def save
     sql = "INSERT into transactions (
     amount,
+    description,
     merchant_id,
     tag_id,
     transaction_time
     )
-    VALUES ($1, $2, $3, $4)
+    VALUES ($1, $2, $3, $4, $5)
     RETURNING id;"
     values = [
       @amount,
+      @description,
       @merchant_id,
       @tag_id,
       @transaction_time
@@ -52,11 +55,12 @@ class Transaction
     sql = "UPDATE transactions
     SET (
       amount,
+      description,
       merchant_id,
-      tag_id
-      ) = ($1, $2, $3)
-      WHERE transaction_time = $4
-      WHERE id = $5;"
+      tag_id,
+      transation_time
+      ) = ($1, $2, $3, $4, $5)
+      WHERE id = $6;"
 
       values = [
         @amount,

@@ -71,35 +71,41 @@ tags = Tag.all
 
 transaction_1 = Transaction.new({
   "amount" => 12,
+  "description" => "New T-Shirt",
   "merchant_id" => merchant_1.id,
   "tag_id" => tag_6.id
     })
 transaction_2 = Transaction.new({
   "amount" => 4,
+  "description" => "Morning Latte",
   "merchant_id" => merchant_3.id,
   "tag_id" => tag_4.id
     })
 
 transaction_3 = Transaction.new({
   "amount" => 25,
+  "description" => "Lonely Hearts Club",
   "merchant_id" => merchant_2.id,
   "tag_id" => tag_5.id
     })
 
 transaction_4 = Transaction.new({
   "amount" => 8,
+  "description" => "Couple of pints",
   "merchant_id" => merchant_4.id,
   "tag_id" => tag_3.id
     })
 
 transaction_5 = Transaction.new({
   "amount" => 45,
+  "description" => "Weekly shop",
   "merchant_id" => merchant_5.id,
   "tag_id" => tag_2.id
     })
 
 transaction_6 = Transaction.new({
   "amount" => 22.50,
+  "description" => "bottle of whiskey",
   "merchant_id" => merchant_1.id,
   "tag_id" => tag_1.id
   })
