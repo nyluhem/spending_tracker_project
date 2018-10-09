@@ -1,14 +1,17 @@
 <h1><%= @transaction.description %></h1>
 
-<p>Amount: <%= @transaction.amount %></p>
+<p> Amount: <%= @transaction.amount %></p>
 <p>Merchant Name: <%= @transaction.merchant.name %></p>
 <p>Tag: <%= @transaction.tag.name %></p>
 <p>Transaction Time: <%= @transaction.transaction_time %></p>
-
+<br>
 <a class="btn" href="/transactions/<%= @transaction.id %>/edit">Edit Transaction</a>
-
+<br>
 <form action="/transactions/<%= @transaction.id %>/delete" method="POST">
-  <button class="btn" type="delete">Delete</button>
+  <button class="delete" type="delete">Delete</button>
 </form>
-
-<a href="/transactions">Return to Previous Page</a>
+<br>
+<br>
+<a id="return" href="/transactions">Return to Previous Page</a>
+<br>
+<br>

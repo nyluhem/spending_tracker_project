@@ -1,5 +1,8 @@
 <h1>Merchants</h1>
 
+  <div class="add">
+    <a class="btn" href="merchants/new">Add New Merchant</a>
+  </div>
 
 <% for merchant in @merchants %>
 <p>Name: <%= merchant.name %></p>
@@ -9,11 +12,12 @@
   <% end %></p>
 
 <p>Added: <%= merchant.time_added %></p>
+<br>
 <a class="btn" href="/merchants/<%= merchant.id %>/edit">Edit</a>
 <form action="/merchants/<%= merchant.id %>/delete" method="POST">
-  <button class="btn" type="delete">Delete</button>
+  <button class="delete" type="delete">Delete</button>
 </form>
+<br>
+<br>
 <hr>
 <% end %>
-
-<a class="btn" href="merchants/new">Add New Merchant</a>

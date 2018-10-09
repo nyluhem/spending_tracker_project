@@ -12,7 +12,7 @@ class Transaction
     @amount           = options["amount"]
     @description      = options["description"]
     @merchant_id      = options["merchant_id"].to_i
-    @transaction_time = Time.new.strftime("%H:%M %d-%m-%y")
+    @transaction_time = options["transaction_time"] == nil ? Time.new.strftime("%H:%M %d-%m-%y") : options["transaction_time"]
     @tag_id           = options["tag_id"].to_i
   end
 

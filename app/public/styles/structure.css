@@ -1,20 +1,29 @@
 
 /****** General Styles *********/
 
+html {
+  background-color: #DFDBF9;
+}
+
+
 body {
   font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  width: 600px;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #FFF;
+  padding: 0 20px 20px 20px;
+  border: 2px solid #FFF;
+  border-radius: 10px
 }
 
 h1, h2, h3 {
   font-weight: bold;
-  font-size: 55px;
+  font-size: 36px;
   text-align: center;
   color: black;
-  margin: 0;
-  padding: 0;
+  margin: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
 
 }
 
@@ -26,47 +35,44 @@ a {
 
 }
 
-nav ul li {
-  list-style: none;
+ ul {
+   list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #A9CCE3;
+}
+
+li {
   float: left;
-  padding: 5px;
 }
 
-
-/******* Whole wrapper style *********/
-
-.wrapper {
-  display: grid;
-grid-template-areas: "hd" "nv"
-                        "mn"
-                        "ft";
-grid-template-rows: 150px;
-grid-template-columns:
+li a {
+  display: block;
+  color: #000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-.wrapper > header {
-  grid-area: hd;
+li a:hover {
+  background-color: #AF7AC5;
+  color: #FFF;
 }
 
-.wrapper > nav {
-  grid-area: nv;
-}
-
-.wrapper > main {
-  grid-area: mn;
-}
-
-.wrapper > footer {
-  grid-area: ft;
-}
+  .navcopy {
+    color: #A1A4A4;
+    float: right;
+    padding: 14px 16px;
+  }
 
 /****** Header Style *********/
 .header {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
-  text-decoration: underline;
-  font-size: 72px;
+  font-size: 48px;
   text-align: center;
+  padding: 30px 30px 30px 30px
 }
 
 

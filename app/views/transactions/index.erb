@@ -2,12 +2,17 @@
 
 <p>Total Money Spent: <%= Transaction.total %></p>
 
+<div class="add">
+  <a class="btn" class="add" href="transactions/new">Add a Transaction</a>
+</div>
+
 <% for transaction in @transactions %>
 <p>Amount: <%= transaction.amount %></p>
 <p>Tag: <%= transaction.tag.name %></p>
+<br>
 <a class="btn" href="transactions/<%= transaction.id %>">View Transaction Details</a>
+<br>
+<br>
 <hr>
 
 <% end %>
-
-<a class="btn" href="transactions/new">Add a Transaction</a>
