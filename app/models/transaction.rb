@@ -1,4 +1,5 @@
 require_relative("../db/sql_runner.rb")
+require("pry")
 
 class Transaction
 
@@ -11,7 +12,7 @@ class Transaction
     @amount           = options["amount"]
     @description      = options["description"]
     @merchant_id      = options["merchant_id"].to_i
-    @transaction_time = Time.now.strftime("%H:%M %d-%m-%y")
+    @transaction_time = Time.new.strftime("%H:%M %d-%m-%y")
     @tag_id           = options["tag_id"].to_i
   end
 
@@ -104,6 +105,24 @@ class Transaction
     tag_hash = result[0]
     tag = Tag.new(tag_hash)
     return tag
+  end
+
+
+  # def self.total
+  #   @transactions = Transaction.all
+  #   current_total = 0
+  #   @transactions.each do |transaction|
+  #     current_total += transaction.amount
+  #     end
+  #   return current_total
+  # end
+
+  def self.total
+    sql = "SELECT amount::numeric FROM transactions"
+    results = SqlRunner.run(sql)
+    amounts = results.map {|result| result["amount"].to_f}
+    total = amounts.sum
+    final_total = "$#{total}"
   end
 
 end

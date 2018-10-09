@@ -8,37 +8,43 @@
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="/styles/reset.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/styles/reset.css">
     <link rel="stylesheet" type="text/css" href="/styles/buttons.css">
     <link rel="stylesheet" type="text/css" href="/styles/forms.css">
-    <link rel="stylesheet" type="text/css" href="/styles/structure.css">
+    <link rel="stylesheet" type="text/css" href="/styles/structure.css"> -->
 
   </head>
 
   <body>
-    <main>
+    <section class="wrapper">
+
       <header class="header">
         Pennies to Pounds!
       </header>
-    <ul>
-      <li>
-        <a href="/">Home</a>
-      </li>
-      <li>
-        <a href="/merchants">Merchants</a>
-      </li>
-      <li>
-        <a href="/tags">Tags</a>
-      </li>
-      <li>
-        <a href="/transactions">Transactions</a>
-      </li>
 
-    </ul>
-    <section id="content">
-      <%= yield %>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/merchants">Merchants</a>
+          </li>
+          <li>
+            <a href="/tags">Tags</a>
+          </li>
+          <li>
+            <a href="/transactions">Transactions</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main>
+        <%= yield %>
+      </main>
+
+      <footer>&copy 2018</footer>
+
     </section>
-    </main>
-    <footer>&copy 2018</footer>
   </body>
 </html>

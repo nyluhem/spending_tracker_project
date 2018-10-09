@@ -9,7 +9,8 @@
   font-size: 12px;
   padding: 10px 18px;
   text-decoration: none;
-  margin: 4px
+  box-sizing: content-box;
+  margin: 5px 4px 10px 0;
 }
 
 .btn:hover {

@@ -31,4 +31,6 @@ class TestTransaction < MiniTest::Test
     assert_equal(1, @transaction_1.tag_id)
   end
 
+  p transactions.total
+
 end

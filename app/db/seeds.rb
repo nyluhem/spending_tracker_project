@@ -104,7 +104,7 @@ transaction_5 = Transaction.new({
     })
 
 transaction_6 = Transaction.new({
-  "amount" => 22.50,
+  "amount" => 22,
   "description" => "bottle of whiskey",
   "merchant_id" => merchant_1.id,
   "tag_id" => tag_1.id

@@ -2,13 +2,13 @@
 /****** General Styles *********/
 
 body {
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
   width: 100%;
 }
 
 h1, h2, h3 {
-  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 55px;
   text-align: center;
@@ -19,11 +19,45 @@ h1, h2, h3 {
 }
 
 p {
-  font-family: 'Montserrat', sans-serif;
+  padding: 10px;
 }
 
 a {
 
+}
+
+nav ul li {
+  list-style: none;
+  float: left;
+  padding: 5px;
+}
+
+
+/******* Whole wrapper style *********/
+
+.wrapper {
+  display: grid;
+grid-template-areas: "hd" "nv"
+                        "mn"
+                        "ft";
+grid-template-rows: 150px;
+grid-template-columns:
+}
+
+.wrapper > header {
+  grid-area: hd;
+}
+
+.wrapper > nav {
+  grid-area: nv;
+}
+
+.wrapper > main {
+  grid-area: mn;
+}
+
+.wrapper > footer {
+  grid-area: ft;
 }
 
 /****** Header Style *********/
