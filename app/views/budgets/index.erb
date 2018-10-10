@@ -1,0 +1,25 @@
+<h1>Budgets</h1>
+
+<div class="add">
+  <a class="btn" href="budgets/new">Add New Budget</a>
+</div>
+
+<br>
+<br>
+<br>
+
+<% for budget in @budgets %>
+<p>Tag: <%= budget.tag_name %></p>
+<p>Budget Limit: <%= budget.budget_limit %></p>
+<p>Budget Cushion: <%= budget.budget_cushion %></p>
+<br>
+<a class="btn" href="budgets/<%= budget.id %>">View Transactions for this Tag</a>
+<a class="btn" href="/budgets/<%= budget.id %>/edit">Edit</a>
+<form action="/budgets/<%= budget.id %>/delete" method="POST">
+  <button class="delete" type="delete">Delete</button>
+
+</form>
+<br>
+<br>
+<hr>
+<% end %>

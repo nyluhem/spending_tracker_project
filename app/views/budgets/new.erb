@@ -1,0 +1,24 @@
+<form action="/budgets" method="POST">
+  <br>
+
+  <label for="tag-input">Select a Tag  </label>
+  <select class="" name="tag_id" id="tag-input">
+    <% @tags.each do |tag| %>
+    <option value="<%= tag.id %>">
+    <%= tag.name %></option>
+    <% end %>
+  </select>
+  <br>
+  <br>
+  <label for="limit-input">Budget Limit</label>
+  <input type="text" name="budget_limit" id="limit-input">
+  <br>
+  <br>
+  <label for="cushion-input">Budget Cushiion</label>
+  <input type="text" name="budget_cushion" id="cushion-input">
+  <br>
+  <br>
+  <button class="btn" type="reset">Reset</button>
+  <button class="btn" type="submit">Add Budget</button>
+
+</form>

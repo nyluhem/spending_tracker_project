@@ -9,12 +9,13 @@ html {
 body {
   font-family: 'Montserrat', sans-serif;
   width: 600px;
+
   height: 100%;
   margin: 0 auto;
   background-color: #FFF;
   padding: 0 20px 20px 20px;
   border: 2px solid #FFF;
-  border-radius: 10px
+  border-radius: 10px;
 }
 
 h1, h2, h3 {
