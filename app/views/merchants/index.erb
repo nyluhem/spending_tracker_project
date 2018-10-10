@@ -4,15 +4,20 @@
     <a class="btn" href="merchants/new">Add New Merchant</a>
   </div>
 
+  <br>
+  <br>
+  <br>
+
 <% for merchant in @merchants %>
 <p>Name: <%= merchant.name %></p>
 <p>Associated Tags:
-  <% for tag in  merchant.tag_name %>
-    <%= tag.name + "," unless nil %>
-  <% end %></p>
+  <% tag_comma = merchant.get_tag_names.reduce() {|list, tag| list + ", " + tag} %>
+  <%=tag_comma %>.
+</p>
 
 <p>Added: <%= merchant.time_added %></p>
 <br>
+<a class="btn" href="merchants/<%= merchant.id %>">View Transactions for this Merchant</a>
 <a class="btn" href="/merchants/<%= merchant.id %>/edit">Edit</a>
 <form action="/merchants/<%= merchant.id %>/delete" method="POST">
   <button class="delete" type="delete">Delete</button>

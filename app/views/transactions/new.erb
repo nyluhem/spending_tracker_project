@@ -4,19 +4,19 @@
 
 
 
-  <label for="amount-input">Amount</label>
+  <label for="amount-input">Amount </label>
   <input type="text" name="amount" id="amount-input">
 
     <br>
     <br>
 
-  <label for="description-input">Description</label>
+  <label for="description-input">Description  </label>
   <input type="text" name="description" id="description-input">
 
     <br>
     <br>
 
-  <label for="merchant-input">Select a merchant:</label>
+  <label for="merchant-input">Select a merchant  </label>
   <select class="" name="merchant_id" id="merchant-input">
     <% @merchants.each do |merchant| %>
     <option value="<%= merchant.id %>">
@@ -27,7 +27,7 @@
     <br>
     <br>
 
-  <label for="tag-input">Select a tag:</label>
+  <label for="tag-input">Select a tag  </label>
   <select class="" name="tag_id">
     <% @tags.each do |tag| %>
     <option value="<%= tag.id %>">

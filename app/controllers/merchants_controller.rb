@@ -26,6 +26,14 @@ get("/merchants/:id/edit") do
   erb(:"merchants/edit")
 end
 
+#SHOW
+get("/merchants/:id") do
+  @id = params[:id].to_i
+  @merchant = Merchant.find(@id)
+  @transactions = Transaction.all
+  erb(:"merchants/show")
+end
+
 #CREATE
 
 post("/merchants") do

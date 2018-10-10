@@ -1,0 +1,16 @@
+<h1><%= @merchant.name %></h1>
+
+<p>Total spent at <%= @merchant.name %>: <%= @merchant.total %></p>
+  <br>
+  <br>
+
+
+<% for transaction in @merchant.transactions %>
+  <p>Amount: <%= transaction.amount %></p>
+  <p>Tag: <%= transaction.tag.name %></p>
+  <br>
+  <a class="btn" href="/transactions/<%= transaction.id%>">View Transaction</a>
+  <br>
+  <br>
+  <hr>
+<% end %>
