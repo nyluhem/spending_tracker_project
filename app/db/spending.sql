@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS budgets;
 DROP TABLE IF EXISTS transactions;
-DROP TABLE IF EXISTS tags;
 DROP TABLE IF EXISTS merchants;
+DROP TABLE IF EXISTS tags;
 
 
 CREATE TABLE tags (
@@ -24,9 +24,9 @@ CREATE TABLE transactions (
   tag_id INT8 REFERENCES tags(id) ON DELETE CASCADE
 );
 
-CREATE TABLE users (
+CREATE TABLE budgets (
   id SERIAL8 PRIMARY KEY,
-  name VARCHAR(255),
-  email_address VARCHAR(255),
-  transaction_id INT8 REFERENCES transactions(id) ON DELETE CASCADE
+  tag_id INT8 REFERENCES tags(id) ON DELETE CASCADE,
+  budget_limit MONEY,
+  budget_cushion MONEY
 );

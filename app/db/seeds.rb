@@ -2,6 +2,7 @@ require_relative("../models/user.rb")
 require_relative("../models/transaction.rb")
 require_relative("../models/merchant.rb")
 require_relative("../models/tag.rb")
+require_relative("../models/budget.rb")
 require("pry")
 
 Merchant.delete_all
@@ -127,6 +128,36 @@ transaction_7.save
 
 transactions = Transaction.all
 
+  budget_1 = Budget.new({
+    "tag_id" => tag_1.id,
+    "budget_limit" => 50,
+    "budget_cushion" => 45
+  })
+
+  budget_2 = Budget.new({
+    "tag_id" => tag_2.id,
+    "budget_limit" => 75,
+    "budget_cushion" => 60
+  })
+
+  budget_3 = Budget.new({
+    "tag_id" => tag_3.id,
+    "budget_limit" => 40,
+    "budget_cushion" => 28
+    })
+
+  budget_4 = Budget.new({
+    "tag_id" => tag_4.id,
+    "budget_limit" => 15,
+    "budget_cushion" => 12
+    })
+
+    budget_1.save
+    budget_2.save
+    budget_3.save
+    budget_4.save
+
+    budgets = Budget.all
 
 
 binding.pry
