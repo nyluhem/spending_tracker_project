@@ -110,12 +110,20 @@ transaction_6 = Transaction.new({
   "tag_id" => tag_1.id
   })
 
+transaction_7 = Transaction.new({
+  "amount" => 25.70,
+  "description" => "New Video Game",
+  "merchant_id" => merchant_1.id,
+  "tag_id" => tag_1.id
+  })
+
 transaction_1.save
 transaction_2.save
 transaction_3.save
 transaction_4.save
 transaction_5.save
 transaction_6.save
+transaction_7.save
 
 transactions = Transaction.all
 

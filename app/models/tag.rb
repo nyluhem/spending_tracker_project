@@ -63,4 +63,32 @@ class Tag
     SqlRunner.run(sql, [id])
   end
 
+
+  def transactions
+    sql = "SELECT transactions.*
+        FROM transactions
+        INNER JOIN tags
+        ON transactions.tag_id = tags.id
+        WHERE tags.id = $1;"
+
+      transaction_hash = SqlRunner.run(sql,[@id])
+      transactions = transaction_hash.map {|transaction| Transaction.new(transaction)}
+      return transactions
+  end
+
+  def total
+    sql = "SELECT transactions.amount::numeric
+        FROM transactions
+        INNER JOIN tags
+        ON transactions.tag_id = tags.id
+        WHERE tags.id = $1;"
+
+      results = SqlRunner.run(sql, [@id])
+      amounts = results.map{|result| result["amount"].to_f}
+      total = amounts.sum
+      final_total = "$#{total}"
+  end
+
+
+
 end

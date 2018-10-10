@@ -2,11 +2,19 @@
 <br>
 <form method="POST" action="/transactions">
 
+
+
   <label for="amount-input">Amount</label>
   <input type="text" name="amount" id="amount-input">
 
+    <br>
+    <br>
+
   <label for="description-input">Description</label>
   <input type="text" name="description" id="description-input">
+
+    <br>
+    <br>
 
   <label for="merchant-input">Select a merchant:</label>
   <select class="" name="merchant_id" id="merchant-input">
@@ -15,6 +23,9 @@
     <%= merchant.name %></option>
     <% end %>
   </select>
+
+    <br>
+    <br>
 
   <label for="tag-input">Select a tag:</label>
   <select class="" name="tag_id">
@@ -25,8 +36,11 @@
     <% end %>
   </select>
 
-  <button class="btn" type="reset">Reset</button>
+  <br>
+  <br>
+
   <button class="btn" type="submit">Add Transaction</button>
+  <button class="btn" type="reset">Reset</button>
 
 
 </form>

@@ -3,15 +3,19 @@
   <div class="add">
     <a class="btn" href="tags/new">Add New Tag</a>
   </div>
-
+<br>
+<br>
 
 <% for tag in @tags %>
 <p>Name: <%= tag.name %></p>
 <br>
+
+<a class="btn" href="tags/<%= tag.id %>">View Amount Spent Per Tag</a>
+
 <a class="btn" href="tags/<%= tag.id %>/edit">Edit</a>
 <form action="/tags/<%= tag.id %>/delete" method="POST">
   <button class="delete" type="delete">Delete</button>
   <br>
-  <br>
+  <hr>
 </form>
 <% end %>

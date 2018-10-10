@@ -9,7 +9,7 @@ class Merchant
   def initialize(options)
     @id   = options["id"].to_i
     @name = options["name"]
-    @time_added = Time.now.strftime("%H:%M %d-%m-%y")
+    @time_added = options["time_added"] == nil ? Time.new.strftime("%H:%M %d-%m-%y") : options["time_added"]
   end
 
   def self.delete_all

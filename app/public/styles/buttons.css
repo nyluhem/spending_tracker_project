@@ -8,11 +8,10 @@ button {
 }
 
 .center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-
+  position: relative;
+  margin-left: 180px;
 }
+
 .bigbtn {
   background-color: #A9CCE3;
   border-radius: 12px;

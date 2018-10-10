@@ -26,6 +26,15 @@ get("/tags/:id/edit") do
   erb(:"tags/edit")
 end
 
+#SHOW
+
+get("/tags/:id") do
+  @id = params[:id].to_i
+  @tag = Tag.find(@id)
+  @transactions = Transaction.all
+  erb(:"tags/show")
+end
+
 #CREATE
 
 post("/tags") do
