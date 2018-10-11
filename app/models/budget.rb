@@ -101,4 +101,37 @@ class Budget
       return transactions
   end
 
+  def total
+    sql =   "SELECT transactions.amount::numeric
+    FROM transactions
+    INNER JOIN budgets
+    ON budgets.tag_id = transactions.tag_id
+    WHERE budgets.tag_id = $1;"
+
+    results = SqlRunner.run(sql, [@tag_id])
+    amounts = results.map{|result| result["amount"].to_f}
+    total = amounts.sum
+
+  end
+
+  def final_total
+    final_total = "$#{self.total}"
+  end
+
+  def remainder
+  sql = "SELECT budget_limit::numeric FROM budgets
+    WHERE id = $1"
+    results = SqlRunner.run(sql, [@id])
+    amounts = results.map {|result| result["budget_limit"].to_f}
+    budget = amounts.sum
+    total = self.total.to_f
+    remainder = budget -= total
+    return remainder
+  end
+
+  def final_remainder
+    total = self.remainder.round(2)
+    final_total = "$#{total}"
+  end
+
 end
