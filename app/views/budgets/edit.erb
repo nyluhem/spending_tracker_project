@@ -1,0 +1,30 @@
+<h1>Edit <%= @budget.tag_name %> details</h1>
+
+<form action="/budgets/<%= @budget.id %>" method="POST">
+  <br>
+
+  <label for="tag-input">Select a Tag  </label>
+  <select class="" name="tag_id" id="tag-input" selected="<%= @budget.tag_id %>">
+    <% @tags.each do |tag| %>
+      <% if tag.id == @budget.tag_id %>
+    <option value="<%= tag.id %>" selected>
+    <%= tag.name %></option>
+    <% else %>
+      <option value="<%= tag.id %>"><%= tag.name %></option>
+      <% end %>
+    <% end %>
+  </select>
+  <br>
+  <br>
+  <label for="limit-input">Budget Limit</label>
+  <input type="text" name="budget_limit" value="<%= @budget.budget_limit %>" id="limit-input">
+  <br>
+  <br>
+  <label for="cushion-input">Budget Cushion</label>
+  <input type="text" name="budget_cushion" value="<%= @budget.budget_cushion %>" id="cushion-input">
+  <br>
+  <br>
+  <button class="btn" type="reset">Reset</button>
+  <button class="btn" type="submit">Add Budget</button>
+
+</form>

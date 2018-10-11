@@ -88,5 +88,17 @@ class Budget
     return tag.name
   end
 
+  def transactions
+    sql = "SELECT transactions.*
+          FROM transactions
+          INNER JOIN budgets
+          ON budgets.tag_id = transactions.tag_id
+          WHERE budgets.tag_id = $1"
+
+      result = SqlRunner.run(sql, [@tag_id])
+      transaction_hash = result
+      transactions = transaction_hash.map {|transaction| Transaction.new(transaction)}
+      return transactions
+  end
 
 end

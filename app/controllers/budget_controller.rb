@@ -26,6 +26,7 @@ end
 
 get("/budgets/:id/edit") do
   @budget = Budget.find(params[:id])
+  @tags = Tag.all
   erb(:"budgets/edit")
 end
 
@@ -35,6 +36,8 @@ get("/budgets/:id") do
   @id = params[:id].to_i
   @budget = Budget.find(@id)
   @budgets = Budget.all
+  @transactions = Transaction.all
+  @tags = Tag.all
   erb(:"budgets/show")
 end
 

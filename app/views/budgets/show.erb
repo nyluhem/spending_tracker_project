@@ -1,0 +1,27 @@
+<h1>Budget for: <%= @budget.tag_name %></h1>
+
+<p>Budget Limit: <%= @budget.budget_limit %></p>
+<p>Buget Cushion: <%= @budget.budget_cushion %></p>
+<br>
+<a class="btn" href="/budgets/<%=@budget.id%>/edit">Edit Budget</a>
+<br>
+
+<h3>Transactions</h3>
+
+<% for transaction in @budget.transactions  %>
+  <p>Amount: <%= transaction.amount %></p>
+  <p>Merchant: <%= transaction.merchant.name %></p>
+  <br>
+  <a class="btn" href="/transactions/<%= transaction.id %>">View Transaction</a>
+  <br>
+  <br>
+  <hr>
+  <% end %>
+
+<br>
+<br>
+<a id="return" href="/budgets">Return to Budgets</a>
+<br>
+<br>
+<br>
+<br>
