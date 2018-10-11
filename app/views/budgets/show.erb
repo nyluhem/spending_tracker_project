@@ -1,12 +1,15 @@
 <h1>Budget for: <%= @budget.tag_name %></h1>
 
 <p>Budget Limit: <%= @budget.budget_limit %></p>
-<p>Buget Cushion: <%= @budget.budget_cushion %></p>
+<p>Bugdet Cushion: <%= @budget.budget_cushion %></p>
+<p>Remaining Money in Budget: <%= @budget.final_remainder %></p>
 <br>
 <a class="btn" href="/budgets/<%=@budget.id%>/edit">Edit Budget</a>
 <br>
 
 <h3>Transactions</h3>
+
+<p>Total spent in tag: <%= @budget.final_total %></p>
 
 <% for transaction in @budget.transactions  %>
   <p>Amount: <%= transaction.amount %></p>
