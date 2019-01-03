@@ -1,6 +1,6 @@
 # Spending Tracker
 
-For this solo project, I designed a web app that would allow a user to keep track of their spending habits. This project was completed in Ruby using Sinatra, whilst also using PostgreSQL for databases and HTML/CSS for the front-end design.
+For this solo project, I designed a web app that would allow a user to keep track of their spending habits. This project was completed in four days using Ruby with Sinatra, whilst also using PostgreSQL for databases and HTML/CSS for the front-end design.
 
 ### To run the app:
 
